@@ -1,0 +1,20 @@
+{
+  "config": {
+    "rsa_key_path" : "config/id_rsa",
+    "rsa_passphrase" : "",
+    "host" : "",
+    "username" : "",
+    "mysql_user" : "",
+    "mysql_pwd" : "",
+    "tmp_backup_folder" : "backup/"
+  },
+  "databases" : [
+    "",
+    ""
+  ],
+  "dropbox" : {
+    "auth_token" : "",
+    "keep_files_for_days" : 15,
+    "zip_file_prefix" : "prefix_"
+  }
+}

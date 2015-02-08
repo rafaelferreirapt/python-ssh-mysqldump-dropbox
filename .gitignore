@@ -52,3 +52,24 @@ docs/_build/
 
 # PyBuilder
 target/
+.idea/
+.idea/encodings.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/misc.xml
+
+.idea/python-ssh-mysqldump.iml
+
+*.xml
+
+.idea/vcs.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/python-ssh-mysqldump.iml
+
+*.xml
+id_rsa
