@@ -1,6 +1,6 @@
 {
   "config": {
-    "rsa_key_path" : "config/id_rsa",
+    "rsa_key_path" : "/root/.ssh/id_rsa",
     "rsa_passphrase" : "",
     "host" : "",
     "username" : "",
