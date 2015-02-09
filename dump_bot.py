@@ -16,6 +16,7 @@ mykey = paramiko.RSAKey.from_private_key_file(config_file['config']['rsa_key_pat
 
 #open ssh connection
 client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 client.load_system_host_keys()
 client.connect(config_file['config']['host'], username=config_file['config']['username'], pkey=mykey)
 
