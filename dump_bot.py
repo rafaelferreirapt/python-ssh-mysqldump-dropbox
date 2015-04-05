@@ -1,3 +1,5 @@
+from dropbox.rest import ErrorResponse
+
 __author__ = 'gipmon'
 import paramiko
 import json
@@ -80,8 +82,16 @@ links_file = open("config/links.json", "r")
 links_file = json.load(links_file)
 
 if len(links_file['links']) > config_file['dropbox']['keep_files_for_days']:
-    client_dropbox.file_delete(links_file['links'][0])
-    links_file['links'] = links_file['links'][1:]
+    removed = False
+
+    while not removed:
+        try:
+            client_dropbox.file_delete(links_file['links'][0])
+            removed = True
+        except ErrorResponse:
+            pass
+
+        links_file['links'] = links_file['links'][1:]
 
 #store the link
 links_file['links'] += [response['path']]
