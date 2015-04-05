@@ -84,12 +84,15 @@ links_file = json.load(links_file)
 if len(links_file['links']) > config_file['dropbox']['keep_files_for_days']:
     removed = False
 
-    while not removed:
+    while not removed and len(links_file['links']) != 0:
         try:
             client_dropbox.file_delete(links_file['links'][0])
             removed = True
         except ErrorResponse:
             pass
+
+        if len(links_file['links']) <= 1:
+            break
 
         links_file['links'] = links_file['links'][1:]
 
